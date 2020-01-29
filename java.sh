@@ -30,9 +30,9 @@ function javacfx {
         CLASS="$1"
     fi
 
-    if [ "$#" -gt 1 ]
+    if [ "$#" -ne 1 ]
     then
-        echo "Input 0 or 1 parameters"
+        echo "Input a Java class as parameter"
         return 1 2>/dev/null
     fi
 
