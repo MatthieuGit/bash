@@ -22,7 +22,7 @@ function javacfxwd {
     javac --module-path /usr/lib/jvm/javafx/javafx-sdk-13.0.2/lib --add-modules javafx.controls -d . $(find . -name "*.java")
 }
 
-function javacfx {
+function javafx {
     CLASS=""
 
     if [ "$#" -eq 1 ]
