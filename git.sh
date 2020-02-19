@@ -21,3 +21,12 @@ function gitpull {
 	git reset --hard origin/master;
 	git pull origin master;
 }
+
+function gitforce {
+	if [ "$#" -ne 1 ]
+	then
+		echo "input branch to force push into origin as a parameter" 
+	fi
+
+	git push --force origin $1:master 
+}
