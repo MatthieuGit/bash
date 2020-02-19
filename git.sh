@@ -28,5 +28,5 @@ function gitforce {
 		echo "input branch to force push into origin as a parameter" 
 	fi
 
-	git push --force origin $1:master 
+	git push --force origin $1:master; 
 }
