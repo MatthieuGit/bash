@@ -1,19 +1,19 @@
 function gitpush {
 	git add -A;
-	COMMENT=""
+    COMMENT=""
 
-	if [ "$#" -eq 1 ]
-	then
-		COMMENT="- $1"
-	fi
+    if [ "$#" -eq 1 ]
+    then
+        COMMENT="-- $1"
+    fi
 
-	if [ "$#" -gt 1 ]
-	then
-		echo "Input 0 or 1 parameters"
-		return 1 2>/dev/null
-	fi
+    if [ "$#" -gt 1 ]
+    then
+        echo "Input 0 or 1 parameters"
+        return 1 2>/dev/null
+    fi
 
-	git commit -m "$(date "+%T - %y %m %d") $COMMENT";
+	git commit -m "$(date "+%Y-%m-%d -- %T") $COMMENT";
 	git push -u origin master;
 }
 
