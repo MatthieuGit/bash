@@ -16,7 +16,9 @@ fi
 
 # Set variables
 
-DEVICE=$(/opt/identify-lib.sh)
+DEVICE=$(blkid | egrep -o '\/dev\/(.*)\:\ LABEL="MYUSB"')
+
+DEVICE=$(echo $DEVICE | egrep -o '\/dev\/[a-zA-Z0-9]{1,10}')
 
 LIBRARY=/media/library
 
