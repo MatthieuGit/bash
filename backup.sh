@@ -1,7 +1,7 @@
 #!/bin/bash
 # FUNCTION: Backup creator
 # ARGUMENTS: /
-# AUTHOR: jlanssie@gmail.com
+# AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
 # VERSION: 0.1
 # REQUIRES: /
