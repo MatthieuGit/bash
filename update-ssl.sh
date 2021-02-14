@@ -1,7 +1,7 @@
 #!/bin/bash
 # FUNCTION: Updates SSL certificates
 # ARGUMENTS: none
-# AUTHOR: jlanssie@gmail.com
+# AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
 # VERSION: 1.0
 # REQUIRES:
