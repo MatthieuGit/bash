@@ -9,8 +9,9 @@ function gitpush {
 
     if [ "$#" -gt 1 ]
     then
-        echo "Input 0 or 1 parameters"
+        echo "USAGE: gitpush [optional comment]"
         return 1 2>/dev/null
+	exit 1
     fi
 
 	git commit -m "$(date "+%Y-%m-%d -- %T") $COMMENT";
@@ -25,7 +26,7 @@ function gitpull {
 function gitforce {
 	if [ "$#" -ne 1 ]
 	then
-		echo "input branch to force push into origin as a parameter" 
+		echo "USAGE: gitforce [branch]" 
 	fi
 
 	git push --force origin $1:master; 
