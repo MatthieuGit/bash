@@ -1,7 +1,7 @@
 #!/bin/bash
 # FUNCTION: Minifies JavaScript
 # ARGUMENTS: none
-# AUTHOR: jlanssie
+# AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
 # VERSION: 1.0
 # REQUIRES: uglifyjs
