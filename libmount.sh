@@ -36,6 +36,4 @@ then
 	exit 0
 fi
 
-echo "UNKOWN ERROR"
-
 exit 1
