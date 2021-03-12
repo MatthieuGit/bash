@@ -1,0 +1,18 @@
+#!/bin/bash
+# FUNCTION: Minifies JavaScript
+# ARGUMENTS: none
+# AUTHOR: jlanssie
+# COPYRIGHT: 2021 GNU
+# VERSION: 1.0
+# REQUIRES: uglifyjs
+
+DIRECTORY="/example/"
+SOURCEFILE="scripts.js"
+MINIFIEDFILE="scripts.min.js"
+LOGFILE="update.log"
+
+uglifyjs $DIRECTORY$SOURCEFILE -o $DIRECTORY$MINIFIEDFILE
+
+echo Update - $(date) >> $DIRECTORY$LOGFILE
+
+exit 0
