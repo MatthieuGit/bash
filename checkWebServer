@@ -1,3 +1,11 @@
+#!/bin/bash
+# FUNCTION: Check if a website is up or down
+# ARGUMENTS: /
+# AUTHOR: Jeremy Lanssiers
+# COPYRIGHT: 2021 GNU
+# VERSION: 0.1
+# REQUIRES: curl
+
 SITE="";
 
 if [ "$#" -eq 1 ]
