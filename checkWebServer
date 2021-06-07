@@ -1,0 +1,22 @@
+SITE="";
+
+if [ "$#" -eq 1 ]
+then
+	SITE="$1"
+fi
+
+if [ "$#" -ne 1 ]
+then
+    echo "USAGE: checkWebServer [url]"
+    return 1 2>/dev/null
+exit 1
+fi
+
+if curl -s -o /dev/null "$SITE"
+then
+	echo "$SITE is up"
+else 
+	echo "$SITE is down"
+fi
+
+exit 0
