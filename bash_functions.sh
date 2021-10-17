@@ -10,6 +10,11 @@ function update {
 #Git
 
 function gitpush {
+    if [ -f ./run.sh ]
+    then
+        ./run.sh
+    fi
+
     git add -A;
     COMMENT=""
 
@@ -27,6 +32,8 @@ function gitpush {
 
     git commit -m "$(date "+%Y-%m-%d -- %T") $COMMENT";
     git push -u origin master;
+
+    exit 0
 }
 
 function gitpull {
