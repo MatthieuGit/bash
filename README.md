@@ -1,2 +1,2 @@
-# bash-functions
+# functions-for-bash
 Useful Bash functions
