@@ -10,7 +10,7 @@
 
 if [ -z "$1" ] || [[ ( $1 != "mount"  ) && ( $1 != "umount" ) ]]
 then
-	echo "USAGE: libmount [mount/umount]"
+	echo "USAGE: [mount/umount] [device]"
 	exit 1
 fi
 

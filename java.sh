@@ -32,9 +32,10 @@ function javafx {
 
     if [ "$#" -ne 1 ]
     then
-        echo "Input a Java class as parameter"
+        echo "USAGE: Input a Java class as parameter"
         return 1 2>/dev/null
     fi
 
+    #Set JavaFX path here
     java --module-path /usr/lib/jvm/javafx/javafx-sdk-13.0.2/lib --add-modules javafx.controls $1
 }

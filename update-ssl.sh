@@ -6,7 +6,7 @@
 # VERSION: 1.0
 # REQUIRES:
 
-TARGET="/mydestination/"
+TARGET="mydestination/"
 LOGFILE="log.txt"
 
 cp --remove-destination /fullchain.pem/ $TARGET

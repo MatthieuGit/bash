@@ -5,7 +5,7 @@
 # VERSION: 1.0
 # REQUIRES: sass
 
-DIRECTORY="/example/"
+DIRECTORY="example/"
 SOURCEFILE="style.css"
 MINIFIEDFILE="style.min.css"
 LOGFILE="update.log"
