@@ -1,4 +1,4 @@
-# functions-for-bash
+# Bash
 Useful Bash functions
 
 ## bash_functions
