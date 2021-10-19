@@ -27,13 +27,10 @@ function gitpush {
     then
         echo "USAGE: gitpush [optional comment]"
         return 1 2>/dev/null
-    exit 1
     fi
 
     git commit -m "$(date "+%Y-%m-%d -- %T") $COMMENT";
     git push -u origin master;
-
-    exit 0
 }
 
 function gitpull {
