@@ -30,12 +30,12 @@ function gitpush {
     fi
 
     git commit -m "$(date "+%Y-%m-%d -- %T") $COMMENT";
-    git push -u origin master;
+    git push -u origin main;
 }
 
 function gitpull {
-    git reset --hard origin/master;
-    git pull origin master;
+    git reset --hard origin/main;
+    git pull origin main;
 }
 
 function gitforce {
@@ -44,7 +44,7 @@ function gitforce {
         echo "USAGE: gitforce [branch]" 
     fi
 
-    git push --force origin $1:master; 
+    git push --force origin $1:main; 
 }
 
 #Java
