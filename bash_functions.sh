@@ -1,9 +1,13 @@
 #APT
 
 function update {
+    echo -e "updating available software\n----"
     sudo apt-get update;
+    echo -e "\nupgrading software\n----"
     sudo apt-get upgrade;
+    echo -e "\nremoving obsolete dependency software\n----"
     sudo apt-get autoremove --purge;
+    echo -e "\nremoving software in local cache\n----"
     sudo apt-get clean;
 }
 
