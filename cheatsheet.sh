@@ -24,3 +24,4 @@ find . -name "*" -exec eyeD3 --remove-v1 {} \; >> ~/eyed3.log 2>&1
 
 #install deb package
 sudo dpkg -i package
+
