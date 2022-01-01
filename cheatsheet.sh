@@ -22,6 +22,9 @@ find . -name "*" -exec eyeD3 --to-v2.4 {} \; >> ~/eyed3.log 2>&1
 #Remove IDV1 tags from files with eyed3
 find . -name "*" -exec eyeD3 --remove-v1 {} \; >> ~/eyed3.log 2>&1
 
+#Set album artist with the value from artist with eyed3
+find . -name "*" -type f -exec sh -c 'albumartist=$(eyeD3 "$1" | grep -P "(?<=^artist)" | sed "s/artist\:\ //g"); eyeD3 -b "$albumartist" "$1"' sh {} \;
+
 #install deb package
 sudo dpkg -i package
 
