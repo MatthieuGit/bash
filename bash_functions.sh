@@ -1,6 +1,7 @@
 #APT
 
 function update {
+    sudo echo -e "\r"
     echo -e "updating available software\n----"
     sudo apt-get update;
     echo -e "\nupgrading software\n----"
@@ -9,6 +10,7 @@ function update {
     sudo apt-get autoremove --purge;
     echo -e "\nremoving software in local cache\n----"
     sudo apt-get clean;
+    echo "Done"
 }
 
 #Git
