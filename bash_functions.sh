@@ -1,8 +1,7 @@
 #APT
 
 function update {
-    sudo echo -e "\r"
-    echo -e "updating available software\n----"
+    sudo echo -e "updating available software\n----"
     sudo apt-get update;
     echo -e "\nupgrading software\n----"
     sudo apt-get upgrade;
