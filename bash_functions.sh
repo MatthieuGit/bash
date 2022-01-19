@@ -99,8 +99,7 @@ function javafx {
 
 #eyeD3
 
-function mp3idv3 {
+function mp3tag {
     find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; 
-    find . -name *.mp3 -exec eyeD3 --to-v1.1  {} \; 
     find . -name *.mp3 -exec eyeD3 --remove-v1  {} \;
 }
