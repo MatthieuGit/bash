@@ -16,15 +16,5 @@ find . -name '*.flac' -type f -exec bash -c 'ffmpeg -i "{}" -ab 320k -map_metada
 #Create an SSH Tunnel on port 1111 that takes remote input from port 2222 and tunnels to local output on port 3333
 ssh -p 1111 192.168.0.212 -L 2222:localhost:3333
 
-#Convert tags to IDV2.4 with eyed3
-find . -name "*" -exec eyeD3 --to-v2.4 {} \; >> ~/eyed3.log 2>&1
-
-#Remove IDV1 tags from files with eyed3
-find . -name "*" -exec eyeD3 --remove-v1 {} \; >> ~/eyed3.log 2>&1
-
-#Set album artist with the value from artist with eyed3
-find . -name "*" -type f -exec sh -c 'albumartist=$(eyeD3 "$1" | grep -P "(?<=^artist)" | sed "s/artist\:\ //g"); eyeD3 -b "$albumartist" "$1"' sh {} \;
-
 #install deb package
 sudo dpkg -i package
-

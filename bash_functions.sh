@@ -14,7 +14,7 @@ function update {
 
 #Git
 
-function gitpush {
+function push {
     if [ -f ./run.sh ]
     then
         ./run.sh
@@ -38,12 +38,12 @@ function gitpush {
     git push -u origin main;
 }
 
-function gitpull {
+function pull {
     git reset --hard origin/main;
     git pull origin main;
 }
 
-function gitforce {
+function force {
     if [ "$#" -ne 1 ]
     then
         echo "USAGE: gitforce [branch]" 
@@ -98,7 +98,10 @@ function javafx {
 
 #eyeD3
 
-function mp3tag {
-    find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; 
-    find . -name *.mp3 -exec eyeD3 --remove-v1  {} \;
+function tags {
+    find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; >> ~/eyed3.log 2>&1
+    find . -name *.mp3 -exec eyeD3 --remove-v1  {} \; >> ~/eyed3.log 2>&1
+    
+    #Set album artist with the value from artist with eyed3
+    find . -name "*" -type f -exec sh -c 'albumartist=$(eyeD3 "$1" | grep -P "(?<=^artist)" | sed "s/artist\:\ //g"); eyeD3 -b "$albumartist" "$1"' sh {} \;
 }
