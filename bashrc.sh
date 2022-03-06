@@ -17,7 +17,7 @@
 # Black         0
 # Red           1
 # Green         2
-# Brown         3
+# Orange        3
 # Blue          4
 # Purple        5
 # Cyan          6
@@ -43,7 +43,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\u@\h\[\033[0;00m\] \[\033[0;32m\]\w$(return_git_branch) \[\033[0;00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\u@\h\[\033[0;00m\] \[\033[0;33m\]\w$(return_git_branch) \[\033[0;00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
