@@ -2,7 +2,7 @@
 Useful Bash functions
 
 ## bash_functions
-Inside your bash_rc config, refer to bash_aliases and/or bash_functions, e.g.
+Inside your bash_rc config, refer to bash_aliases and/or bash_functions, e.g. 
 
     # shell customization    
      
