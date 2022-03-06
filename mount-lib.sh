@@ -1,5 +1,5 @@
 #!/bin/bash
-# FUNCTION: Mount or unmount usb device to library
+# FUNCTION: Mount or unmount usb device to library. Use in combination with rc.local at /etc/rc.local
 # ARGUMENTS: none
 # AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
