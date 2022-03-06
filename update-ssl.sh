@@ -3,17 +3,16 @@
 # ARGUMENTS: none
 # AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
-# VERSION: 1.0
 # REQUIRES:
 
-TARGET="mydestination/"
-LOGFILE="log.txt"
+location="mydestination/"
+log="log.txt"
 
-cp --remove-destination /fullchain.pem/ $TARGET
-cp --remove-destination /privkey.pem/ $TARGET
+cp --remove-destination /fullchain.pem/ $location
+cp --remove-destination /privkey.pem/ $location
 
-chown -R user:user $TARGET
+chown -R user:user $location
 
-echo Last update - $(date) >> $TARGET$LOGFILE
+echo Last update - $(date) >> $location$log
 
 exit 0

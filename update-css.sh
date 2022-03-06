@@ -2,16 +2,15 @@
 # ARGUMENTS: none
 # AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
-# VERSION: 1.0
 # REQUIRES: sass
 
-DIRECTORY="example/"
-SOURCEFILE="style.css"
-MINIFIEDFILE="style.min.css"
-LOGFILE="update.log"
+location="example/"
+input_file="style.css"
+output_file="style.min.css"
+log="update.log"
 
-sudo sass --style=compressed --no-source-map $DIRECTORY$SOURCEFILE $DIRECTORY$MINIFIEDFILE
+sudo sass --style=compressed --no-source-map $location$input_file $location$output_file
 
-echo Update - $(date) >> $DIRECTORY$LOGFILE
+echo Update - $(date) >> $location$log
 
 exit 0

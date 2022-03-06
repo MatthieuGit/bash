@@ -3,14 +3,13 @@
 # ARGUMENTS: /
 # AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
-# VERSION: 0.1
 # REQUIRES: curl
 
-SITE="";
+site="";
 
 if [ "$#" -eq 1 ]
 then
-	SITE="$1"
+	site="$1"
 fi
 
 if [ "$#" -ne 1 ]
@@ -20,11 +19,11 @@ then
 exit 1
 fi
 
-if curl -s -o /dev/null "$SITE"
+if curl -s -o /dev/null "$site"
 then
-	echo "$SITE is up"
+	echo "$site is up"
 else 
-	echo "$SITE is down"
+	echo "$site is down"
 fi
 
 exit 0

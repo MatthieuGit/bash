@@ -21,11 +21,11 @@ function push {
     fi
 
     git add -A;
-    COMMENT=""
+    comment=""
 
     if [ "$#" -eq 1 ]
     then
-        COMMENT="-- $1"
+        comment="-- $1"
     fi
 
     if [ "$#" -gt 1 ]
@@ -34,7 +34,7 @@ function push {
         return 1 2>/dev/null
     fi
 
-    git commit -m "$(date "+%Y-%m-%d -- %T") $COMMENT";
+    git commit -m "$(date "+%Y-%m-%d -- %T") $comment";
     git push -u origin main;
 }
 

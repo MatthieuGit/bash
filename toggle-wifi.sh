@@ -3,7 +3,6 @@
 # ARGUMENTS: this command takes no arguments
 # AUTHOR: jlanssie@gmail.com
 # COPYRIGHT: 2020 GNU
-# VERSION: 0.1
 # REQUIRES: nmcli
 
 #Check dependencies

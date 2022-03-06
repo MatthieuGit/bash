@@ -3,7 +3,6 @@
 # ARGUMENTS: none
 # AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
-# VERSION: 1.0
 # REQUIRES: mount
 
 # Check arguments
@@ -16,23 +15,23 @@ fi
 
 # Set variables
 
-DEVICE=$(blkid | egrep -o '\/dev\/(.*)\:\ LABEL="MYUSB"')
+device=$(blkid | egrep -o '\/dev\/(.*)\:\ LABEL="MYUSB"')
 
-DEVICE=$(echo $DEVICE | egrep -o '\/dev\/[a-zA-Z0-9]{1,10}')
+device=$(echo $device | egrep -o '\/dev\/[a-zA-Z0-9]{1,10}')
 
-LIBRARY=/media/library
+library=/media/library
 
 # Mount or unmount library
 
 if [ $1 = "mount" ]
 then
-	mount $DEVICE $LIBRARY
+	mount $device $library
 	exit 0
 fi
 
 if [ $1 = "umount" ]
 then
-	umount $DEVICE $LIBRARY
+	umount $device $library
 	exit 0
 fi
 

@@ -3,7 +3,6 @@
 # ARGUMENTS: /
 # AUTHOR: Jeremy Lanssiers
 # COPYRIGHT: 2021 GNU
-# VERSION: 0.1
 # REQUIRES: /
 
 # What to backup. 
