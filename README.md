@@ -4,9 +4,18 @@ Useful Bash functions
 ## bash_functions
 Inside your bash_rc config, refer to bash_aliases and/or bash_functions, e.g.
 
-    if [ -f ~/.bash_functions ]
+    # shell functions
+     
+    if [ -f ~/repos/bash/bash_functions.sh ]
     then
-        . ~/.bash_functions
+        . ~/repos/bash/bash_functions.sh
+    fi
+     
+    # shell customization    
+     
+    if [ -f ~/repos/bash/bashrc.sh ]
+    then
+        . ~/repos/bash/bashrc.sh
     fi
 
 ## ...
