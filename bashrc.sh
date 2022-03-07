@@ -28,7 +28,7 @@
 # \W: the basename of the current working directory, with $HOME abbreviated with a tilde (~).
 
 return_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 if [ -n "$force_color_prompt" ]; then
