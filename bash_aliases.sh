@@ -1,1 +1,1 @@
-alias cheatsheet="cat ~/Documents/bash/cheatsheet.sh"
+alias cheatsheet="cat ~/repos/bash/cheatsheet.sh"
