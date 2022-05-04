@@ -9,7 +9,7 @@
 backup_files="/home /etc /opt /usr/local"
 
 # Where to backup to.
-dest="/mydestination/"
+dest="/home/$USER/backups"
 
 # Get the dates
 yyyymmdd=$(date '+%Y-%m-%d')
