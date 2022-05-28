@@ -1,7 +1,9 @@
 # ---- Homebrew
 
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+#export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+#export NODE_PATH="$HOME/.npm/lib/node_modules"
+#export PATH="$PATH:$HOME/.npm/bin"
 
 # ---- Prompt
 
