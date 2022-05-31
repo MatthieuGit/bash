@@ -10,6 +10,9 @@ find . -maxdepth 1 -name '*' -type f -exec mv -t ./anotherdirectory {} +
 # Rename pattern 'a' to 'b' in all filenames in current directory
 find . -maxdepth 1 -name "*" -type f -exec rename -n 's/a/b/g' {} +
 
+# Rename pattern 'a' to 'b' in all files in current directory
+find . -type f -exec sed -i '' -e 's/a/b/g' {} \;
+
 # Convert all flac files to mp3
 find . -name '*.flac' -type f -exec bash -c 'ffmpeg -i "{}" -ab 320k -map_metadata 0 -id3v2_version 3 "{}".mp3' \;
 
