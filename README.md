@@ -47,5 +47,12 @@ Also make sure the default lines concerning the color prompt are disabled:
     #fi
     #unset color_prompt force_color_prompt
 
-## ...
-...
+## On a MacOS
+
+Create a .bash_profile in your home directory and add a link to the bashrc, suppress the Zsh warning and use homebrew.
+
+    if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+    fi    
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+    export PATH="/opt/homebrew/bin:$PATH"
