@@ -16,6 +16,9 @@ find . -type f -exec sed -i '' -e 's/a/b/g' {} \;
 # Convert all flac files to mp3
 find . -name '*.flac' -type f -exec bash -c 'ffmpeg -i "{}" -ab 320k -map_metadata 0 -id3v2_version 3 "{}".mp3' \;
 
+# Create a local SSH key and copy it to remote to allow seamless connection
+alias ssh-local-to-remote='ssh-keygen -t rsa; ssh-copy-id -p 1234 user@192.168.0.1'
+
 # Create an SSH tunnel on port 1111 that takes remote input from port 2222 and tunnels to local output on port 3333
 ssh -p 1111 123.123.123.123 -L 2222:localhost:3333
 
