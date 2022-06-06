@@ -10,6 +10,9 @@ find . -maxdepth 1 -name '*' -type f -exec mv -t ./anotherdirectory {} +
 # Rename pattern 'a' to 'b' in all filenames in current directory
 find . -maxdepth 1 -name "*" -type f -exec rename -n 's/a/b/g' {} +
 
+# Find pattern 'abc' in all files in current directory
+find . -type f -exec sh -c 'cat "$1" | grep a' sh {} \;
+
 # Rename pattern 'a' to 'b' in all files in current directory
 find . -type f -exec sed -i '' -e 's/a/b/g' {} \;
 
