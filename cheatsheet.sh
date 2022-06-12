@@ -20,7 +20,10 @@ find . -type f -exec sed -i '' -e 's/a/b/g' {} \;
 find . -maxdepth 1 -name "*" -type f -exec rename -n 's/a/b/g' {} +
 
 # Move all files in current directory to another directory
-find . -maxdepth 1 -name '*' -type f -exec mv -t ./anotherdirectory {} +
+find . -maxdepth 1 -name '*' -type f -exec mv -t ./another-directory {} +
+
+# Delete all files in current directory older than 30 days
+find . -type f -mtime +30 -exec echo {} \;
 
 # Create a local SSH key and copy it to remote address to allow passwordless connection
 ssh-keygen -t rsa; ssh-copy-id -p 1234 user@111.111.111.111
@@ -29,7 +32,7 @@ ssh-keygen -t rsa; ssh-copy-id -p 1234 user@111.111.111.111
 ssh -p 1111 111.111.111.111 -L 2222:localhost:3333
 
 # SSH using key KEY and copy FILE from remote user at remote address to local path
-scp -i /Users/jeremylanssiers/.ssh/KEY remote-user@111.111.111.111:/remote-path/FILE /local-path/FILE
+scp -i /Users/me/.ssh/KEY remote-user@111.111.111.111:/remote-path/FILE /local-path/FILE
 
 # Get ALPN status
 echo | openssl s_client -alpn h2 -connect localhost:1111 | grep ALPN
