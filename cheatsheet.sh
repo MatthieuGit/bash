@@ -48,7 +48,7 @@ sudo nmap -sTU -O 111.111.111.111
 curl -sIv 111.111.111.111
 
 # Get details of request to address with set header
-curl -sIv 111.111.111.111 --header "X-MyHeader: 123" www.google.com
+curl -sIv 111.111.111.111 -H "X-MyHeader: 123" www.google.com
 
 # Find files larger than 100MB 
 find . -type f -size +100M -exec sh -c 'du -hs "$1"' sh {} \;
