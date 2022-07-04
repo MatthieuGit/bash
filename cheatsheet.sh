@@ -58,3 +58,6 @@ find . -type f -size +100M -exec sh -c 'du -hs "$1"' sh {} \;
 
 # Display file size of current path and all children to a max depth
 du -h . --max-depth=5 
+
+# Get logs from journalctl
+journalctl -u myservice.service --since today
