@@ -98,7 +98,7 @@ function javafx {
 
 #eyeD3
 
-function tags {
+function convert-idv1-to-idv2 {
     find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; >> ~/eyed3.log 2>&1
     find . -name *.mp3 -exec eyeD3 --remove-v1  {} \; >> ~/eyed3.log 2>&1
     
