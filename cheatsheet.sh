@@ -39,6 +39,7 @@ echo | openssl s_client -alpn h2 -connect localhost:1111 | grep ALPN
 
 # Get status of ports on which processes are listening
 sudo netstat -nelt | grep LISTEN
+sudo netstat -tulpn | grep LISTEN
 sudo lsof -i -P -n | grep LISTEN
 
 # Get detailed status on port
