@@ -1,4 +1,4 @@
-#APT
+# APT
 
 function update {
     sudo echo -e "updating available software\n----"
@@ -12,7 +12,7 @@ function update {
     echo "Done"
 }
 
-#Git
+# Git
 
 function push {
     if [ -f ./run.sh ]
@@ -52,7 +52,7 @@ function force {
     git push --force origin $1:main; 
 }
 
-#Java
+# Java
 
 function javaclocal {
     javac $(find . -name "*.java");
@@ -96,9 +96,9 @@ function javafx {
     java --module-path /usr/lib/jvm/javafx/javafx-sdk-13.0.2/lib --add-modules javafx.controls $1
 }
 
-#eyeD3
+# eyeD3
 
-function convert-idv1-to-idv2 {
+function convert-idv1-tags-to-idv2-tags {
     find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; >> ~/eyed3.log 2>&1
     find . -name *.mp3 -exec eyeD3 --remove-v1  {} \; >> ~/eyed3.log 2>&1
     
