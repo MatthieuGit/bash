@@ -4,11 +4,22 @@
 
 exit 0
 
+#### Standard output & error
+
 # Redirect standard output and standard error into a log
 mycommand >> mycommand.log 2>&1
 
+#### Logs
+
+# Get logs from journalctl
+journalctl -u myservice.service --since today
+
+#### DPKG
+
 # Install deb package
 sudo dpkg -i package
+
+#### Find
 
 # Find pattern 'abc' in all files in current directory
 find . -type f -exec sh -c 'cat "$1" | grep a' sh {} \;
@@ -25,17 +36,27 @@ find . -maxdepth 1 -name '*' -type f -exec mv -t ./another-directory {} +
 # Delete all files in current directory older than 30 days
 find . -type f -mtime +30 -exec echo {} \;
 
+# Find files larger than 100MB 
+find . -type f -size +100M -exec sh -c 'du -hs "$1"' sh {} \;
+
+# Display file size of current path and all children to a max depth
+du -h . --max-depth=5 
+
+#### SSH 
+
 # Create a local SSH key and copy it to remote address to allow passwordless connection
 ssh-keygen -t rsa; ssh-copy-id -p 1234 user@111.111.111.111
 
 # Create an SSH tunnel on port 1111 that takes remote address input on port 2222 and tunnels to localhost:3333
 ssh -p 1111 111.111.111.111 -L 2222:localhost:3333
 
-# SSH using key KEY and copy FILE from remote user at remote address to local path
+# SSH using key KEY and copy FILE from remote path to local path
 scp -i /Users/me/.ssh/KEY remote-user@111.111.111.111:/remote-path/FILE /local-path/FILE
 
-# Get ALPN status
-echo | openssl s_client -alpn h2 -connect localhost:1111 | grep ALPN
+# SSH using key KEY and copy FILE from local path to remote path 
+scp -i /Users/me/.ssh/KEY /local-path/FILE remote-user@111.111.111.111:/remote-path/FILE
+
+#### Networking
 
 # Get status of ports on which processes are listening
 sudo netstat -nelt | grep LISTEN
@@ -54,11 +75,5 @@ curl -sIv 111.111.111.111
 # Get details of request to address with set header
 curl -sIv 111.111.111.111 -H "X-MyHeader: 123" www.google.com
 
-# Find files larger than 100MB 
-find . -type f -size +100M -exec sh -c 'du -hs "$1"' sh {} \;
-
-# Display file size of current path and all children to a max depth
-du -h . --max-depth=5 
-
-# Get logs from journalctl
-journalctl -u myservice.service --since today
+# Get ALPN status
+echo | openssl s_client -alpn h2 -connect localhost:1111 | grep ALPN
