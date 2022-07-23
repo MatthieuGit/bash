@@ -77,3 +77,20 @@ curl -sIv 111.111.111.111 -H "X-MyHeader: 123" www.google.com
 
 # Get ALPN status
 echo | openssl s_client -alpn h2 -connect localhost:1111 | grep ALPN
+
+#### User Management
+
+# List all users
+cut -d: -f1 /etc/passwd
+
+# Create a new user with a home dir (-m)
+sudo useradd -m username
+
+# Change user home dir
+sudo usermod -d /home/directory user
+
+# Change user password
+sudo passwd username 
+
+# Remove a user
+sudo userdel username
