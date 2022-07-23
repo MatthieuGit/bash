@@ -94,3 +94,8 @@ sudo passwd username
 
 # Remove a user
 sudo userdel username
+
+#### Git
+
+# Store git credentials (follow up by git pull and git push)
+git config --global credential.helper store
