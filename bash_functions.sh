@@ -39,7 +39,6 @@ function push {
 }
 
 function pull {
-    git reset --hard origin/main;
     git pull origin main;
 }
 
