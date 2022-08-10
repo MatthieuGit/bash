@@ -1,6 +1,6 @@
 # APT
 
-function update {
+update () {
     sudo echo -e "updating available software\n----"
     sudo apt-get update;
     echo -e "\nupgrading software\n----"
@@ -14,7 +14,7 @@ function update {
 
 # Git
 
-function push {
+push () {
     if [ -f ./run.sh ]
     then
         ./run.sh
@@ -38,11 +38,11 @@ function push {
     git push -u origin main;
 }
 
-function pull {
+pull () {
     git pull origin main;
 }
 
-function force {
+force () {
     if [ "$#" -ne 1 ]
     then
         echo "USAGE: ""${FUNCNAME[0]}"" [branch]" 
@@ -53,31 +53,31 @@ function force {
 
 # Java
 
-function javaclocal {
+javaclocal () {
     javac $(find . -name "*.java");
 }
 
-function javacbin {
+javacbin () {
     javac -d bin $(find . -name "*.java")
 }
 
-function javacwd {
+javacwd () {
     javac -d . $(find . -name "*.java")
 }
 
-function javacfxlocal {
+javacfxlocal () {
     javac --module-path /usr/lib/jvm/javafx/javafx-sdk-13.0.2/lib --add-modules javafx.controls $(find . -name "*.java")
 }
 
-function javacfxbin {
+javacfxbin () {
     javac --module-path /usr/lib/jvm/javafx/javafx-sdk-13.0.2/lib --add-modules javafx.controls -d bin $(find . -name "*.java")
 }
 
-function javacfxwd {
+javacfxwd () {
     javac --module-path /usr/lib/jvm/javafx/javafx-sdk-13.0.2/lib --add-modules javafx.controls -d . $(find . -name "*.java")
 }
 
-function javafx {
+javafx () {
     CLASS=""
 
     if [ "$#" -eq 1 ]
@@ -97,7 +97,7 @@ function javafx {
 
 # eyeD3
 
-function convert-idv1-tags-to-idv2-tags {
+convert-idv1-tags-to-idv2-tags () {
     find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; >> ~/eyed3.log 2>&1
     find . -name *.mp3 -exec eyeD3 --remove-v1  {} \; >> ~/eyed3.log 2>&1
     
