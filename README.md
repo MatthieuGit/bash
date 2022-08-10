@@ -4,29 +4,27 @@ Useful Bash functions
 ## bash_functions
 Inside your bash_rc config, refer to bash_aliases and/or bash_functions, e.g. 
 
-    # shell customization    
-     
+````
+    # Common BASH setup from ~/repos/bash
+
     if [ -f ~/repos/bash/bashrc.sh ]
     then
         . ~/repos/bash/bashrc.sh
     fi    
-     
-    # shell aliases    
      
     if [ -f ~/repos/bash/bash_aliases.sh ]
     then
         . ~/repos/bash/bash_aliases.sh
     fi    
      
-    # shell functions    
-     
     if [ -f ~/repos/bash/bash_functions.sh ]
     then
         . ~/repos/bash/bash_functions.sh
     fi
+````
 
 Also make sure the default lines concerning the color prompt are disabled: 
-
+````
     #force_color_prompt=yes
 
     #if [ -n "$force_color_prompt" ]; then
@@ -46,6 +44,7 @@ Also make sure the default lines concerning the color prompt are disabled:
     #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     #fi
     #unset color_prompt force_color_prompt
+````
 
 ## On a MacOS
 

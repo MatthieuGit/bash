@@ -30,7 +30,7 @@ function push {
 
     if [ "$#" -gt 1 ]
     then
-        echo "USAGE: gitpush [optional comment]"
+        echo "USAGE: ""${FUNCNAME[0]}"" [optional comment]"
         return 1 2>/dev/null
     fi
 
@@ -45,7 +45,7 @@ function pull {
 function force {
     if [ "$#" -ne 1 ]
     then
-        echo "USAGE: gitforce [branch]" 
+        echo "USAGE: ""${FUNCNAME[0]}"" [branch]" 
     fi
 
     git push --force origin $1:main; 
@@ -87,7 +87,7 @@ function javafx {
 
     if [ "$#" -ne 1 ]
     then
-        echo "USAGE: Input a Java class as parameter"
+        echo "USAGE: ""${FUNCNAME[0]}"" [java class]"
         return 1 2>/dev/null
     fi
 
