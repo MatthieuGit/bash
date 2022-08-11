@@ -5,12 +5,8 @@
 # COPYRIGHT: 2022 GNU
 # REQUIRES: /
 
-home_dir=$(echo ~)
+desktop_files="$HOME""/Desktop/*"
+downloads="$HOME""/Downloads/*"
+screenshots="$HOME""/Pictures/Screenshot*"
 
-#### Screenshots
-
-desktop_files="$home_dir""/Desktop/*"
-screenshots="$home_dir""/Pictures/Screenshot*"
-downloads="$home_dir""/Downloads/*"
-
-rm -rf $(echo "$desktop_files" "$screenshots" "$downloads")
+rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
