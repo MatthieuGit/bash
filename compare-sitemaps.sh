@@ -3,11 +3,13 @@
 # ARGUMENTS: /
 # REQUIRES: curl, xmlstarlet
 
-# --- Global variables
+echo ...
+
+#### Global variables
 
 languages=(nl fr de)
 
-# --- Input
+#### Input
 
 input_dir="./input/"
 old_sitemaps_dir="$input_dir""old-sitemaps/"
@@ -19,7 +21,7 @@ new_sitemaps_urls=(https://www.jeremylanssiers.com/sitemap.xml)
 new_sitemaps=()
 #new_sitemaps=("$new_sitemaps_dir"nl.xml "$new_sitemaps_dir"fr.xml "$new_sitemaps_dir"de.xml)
 
-# ---- Output
+#### Output
 
 errors_file="$output_dir"comparison-errors.txt
 rm -f "$errors_file"

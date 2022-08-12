@@ -1,8 +1,6 @@
 #!/bin/bash
 # FUNCTION: Minifies JavaScript
 # ARGUMENTS: none
-# AUTHOR: Jeremy Lanssiers
-# COPYRIGHT: 2021 GNU
 # REQUIRES: uglifyjs
 
 location="example/"

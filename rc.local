@@ -1,8 +1,6 @@
 #!/bin/bash
 # FUNCTION: execute scripts at startup (example file for myscript.sh)
 # ARGUMENTS: none
-# AUTHOR: jlanssie@gmail.com
-# COPYRIGHT: 2021 GNU
 # REQUIRES: save in path "/etc/rc.local"
 
 /usr/local/bin/myscript.sh

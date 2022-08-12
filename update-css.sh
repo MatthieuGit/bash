@@ -1,7 +1,5 @@
 # FUNCTION: Minifies CSS
 # ARGUMENTS: none
-# AUTHOR: Jeremy Lanssiers
-# COPYRIGHT: 2021 GNU
 # REQUIRES: sass
 
 location="example/"

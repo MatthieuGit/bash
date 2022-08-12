@@ -1,15 +1,13 @@
 #!/bin/bash
 # FUNCTION: Mount or unmount usb device to library. Use in combination with rc.local at /etc/rc.local
 # ARGUMENTS: none
-# AUTHOR: Jeremy Lanssiers
-# COPYRIGHT: 2021 GNU
 # REQUIRES: mount
 
 # Check arguments
 
 if [ -z "$1" ] || [[ ( $1 != "mount"  ) && ( $1 != "umount" ) ]]
 then
-	echo "USAGE: [mount/umount] [device]"
+	echo "USAGE:""${FUNCNAME[0]}"" [mount/umount] [device]"
 	exit 1
 fi
 

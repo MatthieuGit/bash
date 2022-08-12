@@ -1,7 +1,3 @@
-####################
-### Cheat sheet ###
-####################
-
 exit 0
 
 #### Standard output & error

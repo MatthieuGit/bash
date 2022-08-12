@@ -1,8 +1,6 @@
 #!/bin/bash
 # FUNCTION: Updates SSL certificates
 # ARGUMENTS: none
-# AUTHOR: Jeremy Lanssiers
-# COPYRIGHT: 2021 GNU
 # REQUIRES:
 
 location="mydestination/"

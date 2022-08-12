@@ -1,8 +1,6 @@
 #!/bin/bash
-# FUNCTION: Cleanup machine
+# FUNCTION: Tidy machine
 # ARGUMENTS: /
-# AUTHOR: Jeremy Lanssiers
-# COPYRIGHT: 2022 GNU
 # REQUIRES: /
 
 desktop_files="$HOME""/Desktop/*"

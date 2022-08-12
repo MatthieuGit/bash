@@ -3,7 +3,9 @@
 # ARGUMENTS: 1) Path of input file
 # REQUIRES: curl
 
-# ---- Input
+echo ...
+
+#### Input
 
 file=""
 
@@ -15,14 +17,14 @@ then
 else
     while :
     do
-        echo "Input the location of a file with URLs to be tested:"
+        echo "USAGE:""${FUNCNAME[0]}"" Input the location of a file with URLs to be tested:"
         read file
         echo""
         if [ -f "$file" ]; then break; fi
     done
 fi 
 
-# ---- Output
+#### Output
 
 mkdir -p output
 errors="./output/urls-errors.txt"
@@ -30,7 +32,7 @@ rm "$errors" 2> /dev/null
 
 echo ...
 
-# ---- Test all URLs in a file and log all responses with a status code above 400
+# Test all URLs in a file and log all responses with a status code above 400
 
 while ifs= read -r line
 do

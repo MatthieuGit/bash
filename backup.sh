@@ -1,8 +1,6 @@
 #!/bin/bash
 # FUNCTION: Backup creator
 # ARGUMENTS: /
-# AUTHOR: Jeremy Lanssiers
-# COPYRIGHT: 2021 GNU
 # REQUIRES: /
 
 # What to backup. 

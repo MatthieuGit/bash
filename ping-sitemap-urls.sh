@@ -3,20 +3,20 @@
 # ARGUMENTS: /
 # REQUIRES: curl, xmlstarlet
 
-# ---- Input
+echo ...
+
+#### Input
 
 sitemaps=(https://jeremylanssiers.com/sitempap.xml)
 
-# ---- Output
+#### Output
 
 output_directory="./output/"
 urls="$output_directory""sitemap-urls.txt"
 errors="$output_directory""sitemap-urls-errors.txt"
 rm "$urls" "$errors" 2> /dev/null
 
-echo ...
-
-# ---- output a list of all urls in the sitemap
+# output a list of all urls in the sitemap
 
 for sitemap in "${sitemaps[@]}"
 do 
@@ -31,7 +31,7 @@ do
     done <<< "$sitemap"
 done
 
-# ---- test all urls in the sitemap and throw an error if the status is not a success or not a redirect
+# Test all urls in the sitemap and throw an error if the status is not a success or not a redirect
 
 while ifs= read -r line
 do

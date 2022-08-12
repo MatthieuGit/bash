@@ -1,4 +1,4 @@
-# ---- Prompt
+#### Prompt
 
 # Colors
 # pattern: '\[033['$weight';'$area$color'\]'
