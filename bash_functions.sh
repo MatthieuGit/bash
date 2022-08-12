@@ -98,8 +98,8 @@ javafx () {
 # eyeD3
 
 convert-idv1-tags-to-idv2-tags () {
-    find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; >> ~/eyed3.log 2>&1
-    find . -name *.mp3 -exec eyeD3 --remove-v1  {} \; >> ~/eyed3.log 2>&1
+    find . -name *.mp3 -exec eyeD3 --to-v2.4  {} \; >> ~/var/log/eyed3.log 2>&1
+    find . -name *.mp3 -exec eyeD3 --remove-v1  {} \; >> ~/var/log/eyed3.log 2>&1
     
     #Set album artist with the value from artist with eyed3
     find . -name "*" -type f -exec sh -c 'albumartist=$(eyeD3 "$1" | grep -P "(?<=^artist)" | sed "s/artist\:\ //g"); eyeD3 -b "$albumartist" "$1"' sh {} \;
