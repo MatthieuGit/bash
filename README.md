@@ -56,3 +56,11 @@ fi
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH="/opt/homebrew/bin:$PATH"
 ````
+
+## NVM
+Add the following to your bash.rc file for NVM to work
+````
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+````
