@@ -56,6 +56,9 @@ scp -i /Users/me/.ssh/KEY remote-user@111.111.111.111:/remote-path/FILE /local-p
 # SSH using key KEY and copy FILE from local path to remote path 
 scp -i /Users/me/.ssh/KEY /local-path/FILE remote-user@111.111.111.111:/remote-path/FILE
 
+# Copy directory contents to remote directory
+sync -ahrPz -e 'ssh -p 6666' /srv/ user@111.111.111.111:/tmp
+
 #### Networking
 
 # Get status of ports on which processes are listening
