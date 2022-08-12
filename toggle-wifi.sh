@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: wifi restart
-# ARGUMENTS: /
-# REQUIRES: nmcli
+#
+# Restart wifi
 
 # Check dependencies
 

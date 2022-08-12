@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: Updates SSL certificates
-# ARGUMENTS: none
-# REQUIRES:
+#
+# Update SSL certificates
 
 location="mydestination/"
 log="log.txt"

@@ -1,4 +1,8 @@
-#### Prompt
+#!/bin/bash
+#
+# Configs for bashrc
+
+# Prompt
 
 # Colors
 # pattern: '\[033['$weight';'$area$color'\]'

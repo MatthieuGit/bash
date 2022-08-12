@@ -1,3 +1,7 @@
+#!/bin/bash
+#
+# Bash cheatsheet
+
 exit 0
 
 #### Standard output & error

@@ -1,6 +1,6 @@
-# FUNCTION: Minifies CSS
-# ARGUMENTS: none
-# REQUIRES: sass
+#!/bin/bash
+#
+# Minify CSS
 
 location="example/"
 input_file="style.css"

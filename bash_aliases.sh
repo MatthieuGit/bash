@@ -1,3 +1,7 @@
+#!/bin/bash
+#
+# Bash aliases
+
 alias cheatsheet="cat /srv/bash/cheatsheet.sh";
 alias tidy="/srv/bash/tidy.sh";
 alias toggle-wifi='/srv/bash/toggle-wifi.sh';

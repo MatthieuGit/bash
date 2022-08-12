@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: Tidy machine
-# ARGUMENTS: /
-# REQUIRES: /
+#
+# Tidy your machine
 
 desktop_files="$HOME""/Desktop/*"
 downloads="$HOME""/Downloads/*"

@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: Minifies JavaScript
-# ARGUMENTS: none
-# REQUIRES: uglifyjs
+#
+# Minify JavaScript
 
 location="example/"
 input_file="scripts.js"

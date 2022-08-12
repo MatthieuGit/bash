@@ -1,11 +1,10 @@
 #!/bin/bash
-# FUNCTION: Ping urls from a urls.txt file and get their status codes if greater than 300
-# ARGUMENTS: 1) Path of input file
-# REQUIRES: curl
+#
+# Ping urls from a urls.txt file and get their status codes if greater than 300
 
 echo ...
 
-#### Input
+# Input
 
 file=""
 
@@ -24,7 +23,7 @@ else
     done
 fi 
 
-#### Output
+# Output
 
 mkdir -p output
 errors="./output/urls-errors.txt"

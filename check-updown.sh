@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: Check if a website is up or down
-# ARGUMENTS: /
-# REQUIRES: curl
+#
+# Check if a website is up or down
 
 site="";
 

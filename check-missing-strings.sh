@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: Check if strings from reference file exist test file.
-# ARGUMENTS: /
-# REQUIRES: curl
+#
+# Check if strings from reference file exist test file
 
 reference_file="./input/reference.txt"
 test_file="./input/test.txt"

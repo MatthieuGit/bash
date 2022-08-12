@@ -1,7 +1,6 @@
 #!/bin/bash
-# FUNCTION: Backup creator
-# ARGUMENTS: /
-# REQUIRES: /
+#
+# Backup creator
 
 # What to backup. 
 backup_files="/home /etc /opt /usr/local"
