@@ -99,3 +99,11 @@ sudo userdel username
 
 # Store git credentials (follow up by git pull and git push)
 git config --global credential.helper store
+
+#### Java
+
+# List available Java versions
+update-java-alternatives --list
+
+# Set Java version
+sudo update-java-alternatives --set /java-alternative
