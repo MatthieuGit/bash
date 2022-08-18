@@ -1,25 +1,27 @@
-# Bash
 Useful Bash functions
 
-## bash_functions
-Inside your bash_rc config, refer to bash_aliases and/or bash_functions, e.g. 
+# Bash
+
+## bash_rc on Linux
+
+Inside your home folder, find your bash_rc config and refer to bash_aliases and/or bash_functions, e.g. 
 
 ````
-# Common BASH setup from /srv/bash
+# Common BASH setup from ~/Repos/bash
 
-if [ -f /srv/bash/bashrc.sh ]
+if [ -f ~/Repos/bash/bashrc.sh ]
 then
-    . /srv/bash/bashrc.sh
+    . ~/Repos/bash/bashrc.sh
 fi    
  
-if [ -f /srv/bash/bash_aliases.sh ]
+if [ -f ~/Repos/bash/bash_aliases.sh ]
 then
-    . /srv/bash/bash_aliases.sh
+    . ~/Repos/bash/bash_aliases.sh
 fi    
  
-if [ -f /srv/bash/bash_functions.sh ]
+if [ -f ~/Repos/bash/bash_functions.sh ]
 then
-    . /srv/bash/bash_functions.sh
+    . ~/Repos/bash/bash_functions.sh
 fi
 ````
 
@@ -46,9 +48,9 @@ Also make sure the default lines concerning the color prompt are disabled:
 #unset color_prompt force_color_prompt
 ````
 
-## On a MacOS
+## bash_profile on MacOS
 
-Create a .bash_profile in your home directory and add a link to the bashrc, suppress the Zsh warning and use homebrew.
+Create a .bash_profile in your home directory and add a link to the bashrc, suppress the Zsh warning and enable homebrew.
 ````
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
@@ -57,10 +59,39 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH="/opt/homebrew/bin:$PATH"
 ````
 
-## NVM
+# NVM
+
 Add the following to your bash.rc file for NVM to work
 ````
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ````
+
+# Java
+
+## OpenJDK
+
+Install Java via OpenJDK, e.g. OpenJdDK 11
+````
+sudo apt-get install openjdk-11-jdk
+````
+
+Check your Java installation with `java -version`
+
+## Oracle 
+
+Download the Java tarball from Oracle Archive at https://www.oracle.com/java/technologies/downloads/archive/
+
+Create a jvm folder in /usr/lib and extract-install the tarball, e.g. jdk-11-linux-x64.tar.gz
+````
+sudo mkdir /usr/lib/jvm; sudo tar zxvf ~/Downloads/jdk-11-linux-x64.tar.gz -C /usr/lib/jvm
+````
+
+Update the system alternatives, e.g. for a jdk11
+````
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk11/bin/java" 1;
+sudo update-alternatives --set java /usr/lib/jvm/jdk11/bin/java;
+````
+
+Check your Java installation with `java -version`
