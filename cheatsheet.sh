@@ -24,6 +24,9 @@ sudo dpkg -i package
 # Find pattern 'abc' in all files in current directory
 find . -type f -exec sh -c 'cat "$1" | grep a' sh {} \;
 
+# Find pattern 'abc' in all files in current directory and list that file along with the match , e.g. myfile: \n mymatch \n\n
+find . -type f -exec sh -c 'if [[ $(cat "$1" | grep "/opt/homebrew/var/www") ]]; then echo "$1" : "\n" $(cat "$1" | grep "/opt/homebrew/var/www") "\n\n"; fi' sh {} \;
+
 # Rename pattern 'a' to 'b' in all files in current directory
 find . -type f -exec sed -i '' -e 's/a/b/g' {} \;
 
