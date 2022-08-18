@@ -118,7 +118,10 @@ sudo brew services start httpd
 sudo apachectl start
 
 # Status httpd on MacOS
-brew info httpd
+sudo brew services 
+sudo brew info httpd
+tail -f /opt/homebrew/var/log/httpd/error_log
 apachectl status
+
 
 
