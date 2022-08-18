@@ -110,3 +110,15 @@ update-java-alternatives --list
 
 # Set Java version
 sudo update-java-alternatives --set /java-alternative
+
+#### Apache 
+
+# Start httpd on MacOS
+sudo brew services start httpd
+sudo apachectl start
+
+# Status httpd on MacOS
+brew info httpd
+apachectl status
+
+
