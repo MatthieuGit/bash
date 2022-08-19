@@ -29,7 +29,7 @@ push () {
 
     if [ "$#" -eq 1 ]
     then
-        comment="-- $1"
+        comment=" -- $1"
     fi
 
     if [ "$#" -gt 1 ]
@@ -38,7 +38,7 @@ push () {
         return 1 2>/dev/null
     fi
 
-    git commit -m "$(date "+%Y-%m-%d -- %T") $comment";
+    git commit -m "$(date "+%Y-%m-%d -- %T")$comment";
     git push -u origin main;
 }
 
