@@ -159,4 +159,7 @@ docker exec -it container_id /bin/bash
 # Copy into container
 docker cp local_path container_id:container_path
 
+# Commit changes to container
+sudo docker commit container_id opp
+
 
