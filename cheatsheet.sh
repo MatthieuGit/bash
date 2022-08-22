@@ -4,22 +4,30 @@
 
 exit 0
 
-#### Standard output & error
+#######################################
+# Commands for Standard output & error
+#######################################
 
 # Redirect standard output and standard error into a log
 mycommand >> mycommand.log 2>&1
 
-#### Logs
+#######################################
+# Commands for Logs
+#######################################
 
 # Get logs from journalctl
 journalctl -u myservice.service --since today
 
-#### DPKG
+#######################################
+# Commands for DPKG
+#######################################
 
 # Install deb package
 sudo dpkg -i package
 
-#### Find
+#######################################
+# Commands for Find
+#######################################
 
 # Find pattern 'abc' in all files in current directory
 find . -type f -exec sh -c 'cat "$1" | grep a' sh {} \;
@@ -45,7 +53,9 @@ find . -type f -size +100M -exec sh -c 'du -hs "$1"' sh {} \;
 # Display file size of current path and all children to a max depth
 du -h . --max-depth=5 
 
-#### SSH 
+#######################################
+# Commands for SSH 
+#######################################
 
 # Create a local SSH key and copy it to remote address to allow passwordless connection
 ssh-keygen -t rsa; ssh-copy-id -p 1234 user@111.111.111.111
@@ -62,7 +72,9 @@ scp -i /Users/me/.ssh/KEY /local-path/FILE remote-user@111.111.111.111:/remote-p
 # Copy directory contents to remote directory
 sync -ahrPz -e 'ssh -p 6666' /srv/ user@111.111.111.111:/tmp
 
-#### Networking
+#######################################
+# Commands for Networking
+#######################################
 
 # Get status of ports on which processes are listening
 sudo netstat -nelt | grep LISTEN
@@ -84,7 +96,9 @@ curl -sIv 111.111.111.111 -H "X-MyHeader: 123" www.google.com
 # Get ALPN status
 echo | openssl s_client -alpn h2 -connect localhost:1111 | grep ALPN
 
-#### User Management
+#######################################
+# Commands for User Management
+#######################################
 
 # List all users
 cut -d: -f1 /etc/passwd
@@ -101,12 +115,16 @@ sudo passwd username
 # Remove a user
 sudo userdel username
 
-#### Git
+#######################################
+# Commands for Git
+#######################################
 
 # Store git credentials (follow up by git pull and git push)
 git config --global credential.helper store
 
-#### Java
+#######################################
+# Commands for Java
+#######################################
 
 # List available Java versions
 update-java-alternatives --list
@@ -114,17 +132,31 @@ update-java-alternatives --list
 # Set Java version
 sudo update-java-alternatives --set /java-alternative
 
-#### Apache 
+#######################################
+# Commands for Apache 
+#######################################
 
 # Start httpd on MacOS
-sudo brew services start httpd
-sudo apachectl start
+brew services start httpd
+apachectl start
 
 # Status httpd on MacOS
-sudo brew services 
-sudo brew info httpd
+brew services 
+brew info httpd
 tail -f /opt/homebrew/var/log/httpd/error_log
-apachectl status
+apachectl start
 
+#######################################
+# Commands for Docker
+#######################################
+
+# List containers
+docker ps 
+
+# Access container
+docker exec -it container_id /bin/bash
+
+# Copy into container
+docker cp local_path container_id:container_path
 
 
