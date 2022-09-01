@@ -4,6 +4,6 @@
 
 desktop_files="$HOME""/Desktop/*"
 downloads="$HOME""/Downloads/*"
-screenshots="$HOME""/Pictures/Screenshot*"
+screenshots="$HOME""/Pictures/Screen*"
 
 rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
