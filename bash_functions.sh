@@ -31,7 +31,7 @@ push () {
                 ;;
         esac
     done
-    shift "$((OPTIND-1))"
+    shift "$((OPTIND-1))" 
 
 
     if [ "$#" -gt 1 ] || [[ "$1" == "help" ]]
