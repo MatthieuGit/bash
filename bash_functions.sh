@@ -19,27 +19,34 @@ update () {
 # Git
 
 push () {
-    if [ -f ./run.sh ]
-    then
-        ./run.sh
-    fi
+    local_git_branch=$(git rev-parse --abbrev-ref HEAD)
+    remote_git_branch=""
 
-    git add -A;
     comment=""
 
-    if [ "$#" -eq 1 ]
-    then
-        comment=" -- $1"
-    fi
+    while getopts "u" option; do
+        case "${option}" in
+            u)
+                remote_git_branch="$USER";
+                ;;
+        esac
+    done
+    shift "$((OPTIND-1))"
 
-    if [ "$#" -gt 1 ]
+
+    if [ "$#" -gt 1 ] || [[ "$1" == "help" ]]
     then
-        echo "USAGE: ""${FUNCNAME[0]}"" [optional comment]"
+        echo "USAGE: ""${FUNCNAME[0]}"" [optional flag: -u : remote branch = username ] [optional: commit message]"
         return 1 2>/dev/null
     fi
 
-    git commit -m "$(date "+%Y-%m-%d -- %T")$comment";
-    git push -u origin main;
+    git add -A;
+
+    if [ "$#" -ne 1 ]; then comment="$local_git_branch - update" ; else comment="$local_git_branch - $1"; fi;
+
+    git commit -m "$comment";
+
+    git push origin "$local_git_branch"":""$remote_git_branch";
 }
 
 pull () {
