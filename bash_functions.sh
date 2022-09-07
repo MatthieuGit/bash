@@ -46,8 +46,6 @@ push () {
 
     git commit -m "$comment";
 
-    echo git push origin "$local_git_branch"":""$remote_git_branch";
-
     git push origin "$local_git_branch"":""$remote_git_branch";
 }
 
