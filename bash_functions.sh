@@ -20,7 +20,7 @@ update () {
 
 push () {
     local_git_branch=$(git rev-parse --abbrev-ref HEAD)
-    remote_git_branch=""
+    remote_git_branch="$local_git_branch"
 
     comment="" 
 
