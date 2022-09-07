@@ -22,7 +22,7 @@ push () {
     local_git_branch=$(git rev-parse --abbrev-ref HEAD)
     remote_git_branch=""
 
-    comment=""
+    comment="" 
 
     while getopts "u" option; do
         case "${option}" in
@@ -50,7 +50,7 @@ push () {
 }
 
 pull () {
-    git pull origin master
+    git pull origin main
 }
 
 force () {
