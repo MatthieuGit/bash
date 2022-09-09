@@ -50,7 +50,7 @@ push () {
 }
 
 pull () {
-    git pull origin main
+    git pull
 }
 
 force () {

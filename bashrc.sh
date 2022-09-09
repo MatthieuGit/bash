@@ -5,7 +5,7 @@
 # Prompt
 
 # Colors
-# pattern: '\[033['$weight';'$area$color'\]'
+# pattern: '\[033['$weight';'${area}${color}'m\]'
 # e.g. \[\033[0;30m\] (Normal Foreground Black)
 
 # Weights
@@ -27,9 +27,20 @@
 # Cyan          6
 # White         7
 
+# Use ANSI sequence: 
+# starts with 38;5;${x-term-colorId} for the foreground and 48;5;${x-term-colorId} for the background,:
+
 # \u: the username of the current user.
 # \h: the hostname up to the first dot (.) in the Fully-Qualified Domain Name.
 # \W: the basename of the current working directory, with $HOME abbreviated with a tilde (~).
+
+YELLOW=$'\033[38;5;222;40m'
+RED=$'\033[38;5;216;40m'
+RED=$'\033[38;5;211;40m'
+PURPLE=$'\033[38;5;147;40m'
+GREEN=$'\033[38;5;150;40m'
+CYAN=$'\033[38;5;117;40m'
+WHITE=$'\033[37;40m'
 
 return_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -49,7 +60,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[0;36m\]\u\[\033[0;00m\]\[\033[0;34m\]@\[\033[0;00m\]\[\033[0;36m\]\h\[\033[0;00m\] \[\033[0;35m\]\w$(return_git_branch) \[\033[0;00m\]\[\033[0;37m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[$CYAN\]\w\[$YELLOW\]$(return_git_branch) \[$RED\]$\[$WHITE\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
