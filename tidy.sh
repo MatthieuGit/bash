@@ -5,5 +5,6 @@
 desktop_files="$HOME""/Desktop/*"
 downloads="$HOME""/Downloads/*"
 screenshots="$HOME""/Pictures/Screen*"
+MacOS_trash_files="$HOME"".Trash/*""
 
-rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
+rm -rf $(echo "$desktop_files" "$downloads" "$screenshots" "$MacOS_trash_files")
