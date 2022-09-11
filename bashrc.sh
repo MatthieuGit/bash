@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[$CYAN\]\w\[$RED\]$(return_git_branch) \[$RED\]$\e[0m '
+    PS1='\[$CYAN\]\w\[$YELLOW\]$(return_git_branch) $\e[0m '
 else
     PS1='\u@\h:\w\$ '
 fi
