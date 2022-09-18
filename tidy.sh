@@ -8,7 +8,7 @@ desktop_files="$HOME""/Desktop/*"
 downloads="$HOME""/Downloads/*"
 screenshots="$HOME""/Pictures/Screen*"
 
-rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
+rm -rf "$desktop_files" "$downloads" "$screenshots"
 
 # MacOS specific destinations
 
