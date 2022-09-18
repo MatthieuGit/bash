@@ -2,9 +2,18 @@
 #
 # Tidy your machine
 
-desktop_files="~/Desktop/*"
-downloads="~/Downloads/*"
-screenshots="~/Pictures/Screen*"
-MacOS_trash_files="~/.Trash/*"
+# General Linux / MacOs destinations
 
-rm -rf $(echo "$desktop_files" "$downloads" "$screenshots" "$MacOS_trash_files")
+desktop_files="$HOME""/Desktop/*"
+downloads="$HOME""/Downloads/*"
+screenshots="$HOME""/Pictures/Screen*"
+
+rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
+
+# MacOS specific destinations
+
+if [ $(uname) == "Darwin" ]
+then
+	rm -rf ~/.Trash/*
+	rm -rf ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/.Trash/*
+fi
