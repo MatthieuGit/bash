@@ -8,12 +8,14 @@ desktop_files="$HOME""/Desktop/*"
 downloads="$HOME""/Downloads/*"
 screenshots="$HOME""/Pictures/Screen*"
 
-rm -rf "$desktop_files" "$downloads" "$screenshots"
+rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
 
 # MacOS specific destinations
 
 if [ $(uname) == "Darwin" ]
 then
-	rm -rf ~/.Trash/*
-	rm -rf ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/.Trash/*
+	mac_os_trash_1="$HOME""/.Trash/*"
+	mac_os_trash_2="$HOME""/Library/Mobile\ Documents/com\~apple\~CloudDocs/.Trash/*"
+
+	rm -rf $(echo "$mac_os_trash_1" "$mac_os_trash_2")
 fi
