@@ -1,8 +1,6 @@
 #!/bin/bash
 #
-# Configs for bashrc
-
-# Prompt
+# Prompt customization for servers
 
 # Colors
 # pattern: '\[033['$weight';'${area}${color}'m\]'
@@ -41,10 +39,6 @@ GREEN=$'\033[38;5;150;40m'
 CYAN=$'\033[38;5;117;40m'
 WHITE=$'\033[37;40m'
 
-return_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -56,7 +50,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[$CYAN\]\w\[$YELLOW\]$(return_git_branch) $\[$WHITE\] '
+    PS1='\[$RED\]\h \[$YELLOW\]\w \[$RED\]$\[$WHITE\] '
 else
     PS1='\u@\h:\w\$ '
 fi
