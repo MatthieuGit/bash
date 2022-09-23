@@ -162,4 +162,8 @@ docker cp local_path container_id:container_path
 # Commit changes to container
 sudo docker commit container_id opp
 
+#######################################
+# Commands for Certbot
+#######################################
 
+sudo certbot -v renew --dry-run
