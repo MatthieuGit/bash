@@ -81,7 +81,7 @@ Check your Java installation with `java -version`
 
 ## Oracle 
 
-Download the Java tarball from Oracle Archive at https://www.oracle.com/java/technologies/downloads/archive/
+Download the Java tarball from Oracle's Archive at https://www.oracle.com/java/technologies/downloads/archive/
 
 Create a jvm folder in /usr/lib and extract-install the tarball, e.g. jdk-11-linux-x64.tar.gz
 ````
