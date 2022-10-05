@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Configs for bashrc
+# Bash prompt
 
 # Prompt
 
@@ -31,13 +31,13 @@
 # starts with 38;5;${x-term-colorId} for the foreground and 48;5;${x-term-colorId} for the background,:
 
 YELLOW=$'\033[0;38;5;222m'
-RED=$'\033[0;38;5;211m'
+MAGENTA=$'\033[0;38;5;211m'
 PURPLE=$'\033[0;38;5;147m'
 GREEN=$'\033[0;38;5;150m'
 CYAN=$'\033[0;38;5;117m'
 WHITE=$'\033[0;37m'
 
-USERCOLOR=$RED
+USERCOLOR=$MAGENTA
 WORKINGDIRCOLOR=$CYAN
 GITBRANCHCOLOR=$YELLOW
 RESETCOLOR=$WHITE
