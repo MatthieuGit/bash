@@ -1,0 +1,18 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,0,0)'
+background-transparency-percent=8
+bold-color='rgb(255,255,255)'
+bold-color-same-as-fg=false
+bold-is-bright=false
+cursor-background-color='rgb(255,216,102)'
+cursor-colors-set=true
+cursor-foreground-color='rgb(0,0,0)'
+foreground-color='rgb(255,255,255)'
+highlight-background-color='rgb(255,216,102)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(0,0,0)'
+palette=['rgb(23,20,33)', 'rgb(255,97,136)', 'rgb(169,220,118)', 'rgb(169,220,118)', 'rgb(255,97,136)', 'rgb(171,157,242)', 'rgb(252,152,103)', 'rgb(255,255,255)', 'rgb(94,92,100)', 'rgb(240,96,128)', 'rgb(160,208,112)', 'rgb(160,208,112)', 'rgb(240,96,128)', 'rgb(160,144,240)', 'rgb(240,144,96)', 'rgb(240,240,240)']
+title='Command Line'
+use-theme-colors=false
+use-transparent-background=false
+visible-name='Monokai'
