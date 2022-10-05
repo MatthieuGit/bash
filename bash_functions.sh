@@ -2,7 +2,7 @@
 #
 # Bash functions
 
-# Sytem info
+# System info
 
 get_OS () {
     hostnamectl | grep -Po "^Operating System: \K[^<]+"
