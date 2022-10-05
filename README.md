@@ -95,3 +95,17 @@ sudo update-alternatives --set java /usr/lib/jvm/jdk11/bin/java;
 ````
 
 Check your Java installation with `java -version`
+
+# Linux GNOME Terminal profile
+
+Export GNOME Terminal profile with
+
+````
+dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
+````
+
+Import GNOME Terminal profile with
+
+````
+dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+````

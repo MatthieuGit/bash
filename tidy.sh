@@ -2,20 +2,26 @@
 #
 # Tidy your machine
 
-# General Linux / MacOs destinations
+# General file paths
 
-desktop_files="$HOME""/Desktop/*"
-downloads="$HOME""/Downloads/*"
-screenshots="$HOME""/Pictures/Screen*"
+file_paths=("$HOME""/Desktop/*" "$HOME""/Downloads/*" "$HOME""/Pictures/Screen*")
 
-rm -rf $(echo "$desktop_files" "$downloads" "$screenshots")
+# Linux-specific file paths
 
-# MacOS specific destinations
-
-if [ $(uname) == "Darwin" ]
-then
-	mac_os_trash_1="$HOME""/.Trash/*"
-	mac_os_trash_2="$HOME""/Library/Mobile\ Documents/com\~apple\~CloudDocs/.Trash/*"
-
-	rm -rf $(echo "$mac_os_trash_1" "$mac_os_trash_2")
+if [ $(uname) == "Linux" ]; then
+	file_paths+=("$HOME""/.local/share/Trash/files/*")
 fi
+
+# MacOS-specific file paths
+
+if [ $(uname) == "Darwin" ]; then
+	file_paths+="$HOME""/.Trash/*"
+	file_paths+="$HOME""/Library/Mobile\ Documents/com\~apple\~CloudDocs/.Trash/*"
+fi
+
+# Remove file paths
+
+for file_path in "${file_paths[@]}"
+do
+	rm -rf $(echo "$file_path")
+done
