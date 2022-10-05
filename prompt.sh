@@ -1,6 +1,8 @@
 #!/bin/bash
 #
-# Prompt customization for servers
+# Configs for bashrc
+
+# Prompt
 
 # Colors
 # pattern: '\[033['$weight';'${area}${color}'m\]'
@@ -28,16 +30,21 @@
 # Use ANSI sequence: 
 # starts with 38;5;${x-term-colorId} for the foreground and 48;5;${x-term-colorId} for the background,:
 
-# \u: the username of the current user.
-# \h: the hostname up to the first dot (.) in the Fully-Qualified Domain Name.
-# \W: the basename of the current working directory, with $HOME abbreviated with a tilde (~).
+YELLOW=$'\033[0;38;5;222m'
+RED=$'\033[0;38;5;211m'
+PURPLE=$'\033[0;38;5;147m'
+GREEN=$'\033[0;38;5;150m'
+CYAN=$'\033[0;38;5;117m'
+WHITE=$'\033[0;37m'
 
-YELLOW=$'\033[38;5;222;40m'
-RED=$'\033[38;5;211;40m'
-PURPLE=$'\033[38;5;147;40m'
-GREEN=$'\033[38;5;150;40m'
-CYAN=$'\033[38;5;117;40m'
-WHITE=$'\033[37;40m'
+USERCOLOR=$RED
+WORKINGDIRCOLOR=$CYAN
+GITBRANCHCOLOR=$YELLOW
+RESETCOLOR=$WHITE
+
+return_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
 force_color_prompt=yes
 
@@ -49,8 +56,12 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# \u: the username of the current user.
+# \h: the hostname up to the first dot (.) in the Fully-Qualified Domain Name.
+# \W: the basename of the current working directory, with $HOME abbreviated with a tilde (~).
+
 if [ "$color_prompt" = yes ]; then
-    PS1='\[$RED\]\h \[$YELLOW\]\w \[$RED\]$\[$WHITE\] '
+    PS1='\[$WORKINGDIRCOLOR\]\w\[$GITBRANCHCOLOR\]$(return_git_branch) $\[$RESETCOLOR\] '
 else
     PS1='\u@\h:\w\$ '
 fi
