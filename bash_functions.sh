@@ -50,8 +50,7 @@ push () {
     shift "$((OPTIND-1))" 
 
 
-    if [ "$#" -gt 1 ] || [[ "$1" == "help" ]]
-    then
+    if [ "$#" -gt 1 ] || [[ "$1" == "help" ]]; then
         echo "USAGE: ""${FUNCNAME[0]}"" [optional flag: -u : remote branch = username ] [optional: commit message]"
         return 1 2>/dev/null
     fi
@@ -70,8 +69,7 @@ pull () {
 }
 
 force () {
-    if [ "$#" -ne 1 ]
-    then
+    if [ "$#" -ne 1 ]; then
         echo "USAGE: ""${FUNCNAME[0]}"" [branch]" 
     fi
 
@@ -107,13 +105,11 @@ javacfxwd () {
 javafx () {
     CLASS=""
 
-    if [ "$#" -eq 1 ]
-    then
+    if [ "$#" -eq 1 ]; then
         CLASS="$1"
     fi
 
-    if [ "$#" -ne 1 ]
-    then
+    if [ "$#" -ne 1 ]; then
         echo "USAGE: ""${FUNCNAME[0]}"" [java class]"
         return 1 2>/dev/null
     fi

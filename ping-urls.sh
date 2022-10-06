@@ -10,8 +10,7 @@ file=""
 
 # Check arguments
 
-if [ -n "$1" ]
-then
+if [ -n "$1" ]; then
     if [ -f "$1" ]; then file="$1"; else echo invalid path ; fi
 else
     while :

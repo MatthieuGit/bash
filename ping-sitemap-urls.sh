@@ -24,8 +24,7 @@ do
     
     while ifs= read -r line
     do
-        if [[ "$line" =~ "https" ]]
-        then 
+        if [[ "$line" =~ "https" ]]; then 
             echo "$line" | sed -E s'/(\<loc\>|\<\/loc\>)//'g >> "$urls"
         fi
     done <<< "$sitemap"

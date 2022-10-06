@@ -9,8 +9,7 @@ echo ...
 
 while read reference_string
 do 
-    if ! grep -q "$reference_string" "$reference_file"
-    then
+    if ! grep -q "$reference_string" "$reference_file"; then
       echo "$reference_string" was not found in "$reference_file"
     fi
 done < "$test_file"

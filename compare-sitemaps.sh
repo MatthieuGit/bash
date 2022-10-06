@@ -52,10 +52,8 @@ do
             new_url=$(echo -ne "$newline" | sed -E s'/(\t|([0-9]{4}-[0-9]{2}-[0-9]{2}))//'g)
             new_lastmod=$(echo -ne " $newline" | sed -E s'/(\t|(^(.*.)html))//'g)
 
-            if [[ "$url" == "$new_url" ]];
-            then 
-                if [[ "$lastmod" -lt "$new_lastmod" ]]; 
-                then
+            if [[ "$url" == "$new_url" ]]; then 
+                if [[ "$lastmod" -lt "$new_lastmod" ]]; then
                     echo -e "$url" - last modified: "$lastmod""\n"has regressed "$new_url" - lastmodified: "$new_lastmod""\n\n" >> "$errors_file"
                     error_index=$((error_index+1))
                 fi

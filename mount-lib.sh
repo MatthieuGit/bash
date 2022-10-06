@@ -4,8 +4,7 @@
 
 # Check arguments
 
-if [ -z "$1" ] || [[ ( $1 != "mount"  ) && ( $1 != "umount" ) ]]
-then
+if [ -z "$1" ] || [[ ( $1 != "mount"  ) && ( $1 != "umount" ) ]]; then
 	echo "USAGE:""${FUNCNAME[0]}"" [mount/umount] [device]"
 	exit 1
 fi
@@ -20,14 +19,12 @@ library=/media/library
 
 # Mount or unmount library
 
-if [ $1 = "mount" ]
-then
+if [ $1 = "mount" ]; then
 	mount $device $library
 	exit 0
 fi
 
-if [ $1 = "umount" ]
-then
+if [ $1 = "umount" ]; then
 	umount $device $library
 	exit 0
 fi

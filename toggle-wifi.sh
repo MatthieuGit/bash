@@ -4,8 +4,7 @@
 
 # Check dependencies
 
-if ! command -v nmcli > /dev/null 2>&1
-then
+if ! command -v nmcli > /dev/null 2>&1; then
 	echo "ERROR: nmcli is unavailable."
 	exit 1
 fi
