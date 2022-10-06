@@ -54,6 +54,23 @@ find . -type f -size +100M -exec sh -c 'du -hs "$1"' sh {} \;
 du -h . --max-depth=5 
 
 #######################################
+# Commands for crontab 
+#######################################
+
+# Open crontab with nano editor
+EDITOR=nano crontab -e
+
+#######################################
+# Commands for user management 
+#######################################
+
+# Add myuser to mygroup
+sudo usermod -a -G mygroup myuser
+
+# Remove myuser from mygroup
+sudo gpasswd -d mygroup myuser
+
+#######################################
 # Commands for SSH 
 #######################################
 
